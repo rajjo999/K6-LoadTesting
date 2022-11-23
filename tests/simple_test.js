@@ -10,7 +10,6 @@ export let options = {
   };
 
 export default () => {
-    let response = http.get("https://localhost:5001/youtube");
-
+    let response = http.get("https://fakerestapi.azurewebsites.net/api/v1/Activities");
     sleep(1);
 };

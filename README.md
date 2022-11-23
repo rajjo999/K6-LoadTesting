@@ -1,5 +1,7 @@
 # Load Testing Using K6
 
+# We are using https://fakerestapi.azurewebsites.net/index.html for sameple APIs
+
 # To run tests locally:
 
 ```

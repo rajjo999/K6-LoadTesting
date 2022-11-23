@@ -9,6 +9,6 @@ export let options = {
 };
 
 export default () => {
-    http.get('https://reqres.in/api/users?page=2');
+    http.get('https://fakerestapi.azurewebsites.net/api/v1/Activities');
     sleep(1);
 };

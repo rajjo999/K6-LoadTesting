@@ -30,14 +30,13 @@ export let options = {
     ],
   };
 
-const API_BASE_URL = 'https://localhost:5001';
+const API_BASE_URL = 'https://fakerestapi.azurewebsites.net/api/v1';
 
 export default () => {
 
     http.batch([
-      ['GET', `${API_BASE_URL}/youtube`],
-      ['GET', `${API_BASE_URL}/github`],
-      ['GET', `${API_BASE_URL}/twitter`],
+      ['GET', `${API_BASE_URL}/Activities`],
+      ['GET', `${API_BASE_URL}/Activities/30`],
     ]);
 
     sleep(1);
