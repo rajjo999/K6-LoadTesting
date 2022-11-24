@@ -21,7 +21,7 @@ export let options = {
       { duration: '5m', target: 0 }, // ramp-down to 0 users
     ],
     thresholds: {
-      http_req_duration: ['p(99)<2000'], // 99% of requests must complete below 1500ms
+      http_req_duration: ['p(99)<2000'], // 99% of requests must complete below 2000ms
     },
   };
 
