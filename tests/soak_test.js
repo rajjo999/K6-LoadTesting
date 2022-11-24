@@ -29,15 +29,54 @@ export let options = {
     ],
   };
 
-  const API_BASE_URL = 'https://localhost:5001';
+const BASE_URL = 'https://fakerestapi.azurewebsites.net/api/v1';
 
-  export default () => {
+export default () => {
 
-      http.batch([
-        ['GET', `${API_BASE_URL}/youtube`],
-        ['GET', `${API_BASE_URL}/github`],
-        ['GET', `${API_BASE_URL}/twitter`],
-      ]);
+  let req1 = {
+    method: 'GET',
+    url: BASE_URL+'/Activities',
+  };
 
-      sleep(1);
+  let req2 = {
+    method: 'POST',
+    url: BASE_URL+'/Activities',
+    body: {
+      "id": 31,
+      "title": "Activit 31",
+      "dueDate": "2034-11-25T22:06:47.906Z",
+      "completed": true
+    },
+    params: {
+      headers: { 'Content-Type': 'application/json; charset=utf-8; v=1.0' },
+    },
+  };
+  
+  let req3 = {
+    method: 'GET',
+    url: BASE_URL+'/Activities/20',
+  };
+
+  let req4 = {
+    method: 'PUT',
+    url: BASE_URL+'/Activities/31',
+    body: {
+      "id": 31,
+      "title": "Activit 31",
+      "dueDate": "2030-11-25T22:06:47.906Z",
+      "completed": true
+    },
+    params: {
+      headers: { 'Content-Type': 'application/json; charset=utf-8; v=1.0' },
+    },
+  };
+
+  let req5 = {
+    method: 'DELETE',
+    url: BASE_URL+'/Activities/31',
+  };
+
+  let response = http.batch([req1, req2, req3, req4, req5]);
+
+  sleep(1);
   };

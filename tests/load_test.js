@@ -25,18 +25,18 @@ export let options = {
     },
   };
 
-const API_BASE_URL = 'https://fakerestapi.azurewebsites.net/api/v1';
+const BASE_URL = 'https://fakerestapi.azurewebsites.net/api/v1';
 
 export default () => {
 
   let req1 = {
     method: 'GET',
-    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities',
+    url: BASE_URL+'/Activities',
   };
 
   let req2 = {
     method: 'POST',
-    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities',
+    url: BASE_URL+'/Activities',
     body: {
       "id": 31,
       "title": "Activit 31",
@@ -50,12 +50,12 @@ export default () => {
   
   let req3 = {
     method: 'GET',
-    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities/20',
+    url: BASE_URL+'/Activities/20',
   };
 
   let req4 = {
     method: 'PUT',
-    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities/31',
+    url: BASE_URL+'/Activities/31',
     body: {
       "id": 31,
       "title": "Activit 31",
@@ -69,9 +69,10 @@ export default () => {
 
   let req5 = {
     method: 'DELETE',
-    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities/31',
+    url: BASE_URL+'/Activities/31',
   };
 
   let response = http.batch([req1, req2, req3, req4, req5]);
+
   sleep(1);
 };
