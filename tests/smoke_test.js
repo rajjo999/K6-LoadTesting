@@ -16,13 +16,12 @@ export let options = {
     vus: 1,
     duration: '1m',
     thresholds: {
-      http_req_duration: ['p(99)<50'], // 99% of requests must complete below 50ms
+      http_req_duration: ['p(99)<400'], // 99% of requests must complete below 400ms
     },
   };
 
 export default () => {
 
-    let response = http.get("https://localhost:5001/youtube");
-
+    let response = http.get("https://fakerestapi.azurewebsites.net/api/v1/Activities");
     sleep(1);
 };
