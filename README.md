@@ -21,5 +21,5 @@ brew install k6
 # To run tests:
 
 ```
-k6 run sample_test.js
+k6 run simple_test.js
 ```
