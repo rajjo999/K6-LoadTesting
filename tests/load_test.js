@@ -21,7 +21,7 @@ export let options = {
       { duration: '5m', target: 0 }, // ramp-down to 0 users
     ],
     thresholds: {
-      http_req_duration: ['p(99)<150'], // 99% of requests must complete below 150ms
+      http_req_duration: ['p(99)<2000'], // 99% of requests must complete below 1500ms
     },
   };
 
@@ -53,6 +53,25 @@ export default () => {
     url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities/20',
   };
 
-  let response = http.batch([req1, req2, req3]);
+  let req4 = {
+    method: 'PUT',
+    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities/31',
+    body: {
+      "id": 31,
+      "title": "Activit 31",
+      "dueDate": "2030-11-25T22:06:47.906Z",
+      "completed": true
+    },
+    params: {
+      headers: { 'Content-Type': 'application/json; charset=utf-8; v=1.0' },
+    },
+  };
+
+  let req5 = {
+    method: 'DELETE',
+    url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities/31',
+  };
+
+  let response = http.batch([req1, req2, req3, req4, req5]);
   sleep(1);
 };
