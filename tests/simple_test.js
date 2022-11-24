@@ -11,5 +11,6 @@ export let options = {
 
 export default () => {
     let response = http.get("https://fakerestapi.azurewebsites.net/api/v1/Activities");
+    
     sleep(1);
 };

@@ -2,6 +2,13 @@
 
 We are using https://fakerestapi.azurewebsites.net/index.html for tests
 
+There are 4 main types of Performance Tests:
+
+1) Load Testing
+2) Soak Testing
+3) Spike Testing
+4) Stress Testing
+
 # To run tests locally:
 
 ```
